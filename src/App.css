@@ -7,6 +7,10 @@
 }
 
 :root {
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
 
@@ -16,6 +20,7 @@
   --clr-light: #fff;
   --clr-dark: #303030;
   --clr-grey-1: #f1f5f8;
+  --clr-grey-5: hsl(210, 22%, 49%);
 
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
@@ -60,6 +65,24 @@ strong {
   font-weight: var(--fw-bold);
 }
 
+.btn {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: var(--fs-body);
+  border-color: transparent;
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--clr-grey-5);
+  color: var(--clr-dark);
+}
 /* Typography */
 
 h1,
@@ -85,11 +108,16 @@ h3 {
 
 /* App */
 
+.setup {
+  position: relative;
+}
+
 .adhan {
   position: relative;
 }
 
-.section__box--adhan {
+.section__box--adhan,
+.section__box--setup {
   border-radius: 1em;
   background-color: var(--clr-grey-1);
   display: flex;
@@ -99,6 +127,10 @@ h3 {
   padding: 1em 2em;
 
   box-shadow: var(--bs-2);
+}
+
+.section__box--setup {
+  flex-direction: row;
 }
 
 @media (min-width: 800px) {
