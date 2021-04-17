@@ -29,7 +29,7 @@ const Setup = () => {
   };
 
   useEffect(() => {
-    setCity("");
+    setCity(null);
     if (isToggle) {
       navigator.geolocation.getCurrentPosition(function (position) {
         setLocation((prevState) => {
