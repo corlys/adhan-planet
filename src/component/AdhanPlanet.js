@@ -18,6 +18,7 @@ const AdhanPlanet = (props) => {
     "Maghrib",
     "Isha",
   ]);
+  const [timezone, setTimeZone] = useState("");
 
   // const getPrayerTime = async () => {
   //   try {
@@ -133,7 +134,7 @@ const AdhanPlanet = (props) => {
   return (
     <section className="adhan">
       {isError && <h1>Somethings Wrong...</h1>}
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <div className="spinner" />}
       {isLoading ||
         prayers.map((time_for) => {
           return (

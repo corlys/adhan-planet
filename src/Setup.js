@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 
 import AdhanPlanet from "./component/AdhanPlanet";
+import Footer from "./component/Footer.component";
 
 const Setup = () => {
   const [city, setCity] = useState("");
@@ -62,6 +63,10 @@ const Setup = () => {
               onChange={handleChange}
               value={city}
             >
+              <option disabled selected value="">
+                Select City
+              </option>
+
               {cities.map((city) => {
                 return (
                   <option id={city} value={city}>
@@ -74,6 +79,7 @@ const Setup = () => {
         </div>
       </section>
       <AdhanPlanet location={location} city={city} />
+      <Footer />
     </>
   );
 };
